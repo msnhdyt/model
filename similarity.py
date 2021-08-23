@@ -6,7 +6,7 @@ import os
 class Similarity:
     def __init__(self):
         path = os.path.dirname(__file__)
-        self.transformer = SentenceTransformer('/sentence-transformers_paraphrase-xlm-r-multilingual-v1', cache_folder=path)
+        self.transformer = SentenceTransformer('sentence-transformers_paraphrase-xlm-r-multilingual-v1', cache_folder=path)
 
     def calculate(self, x, y):
         query_vec = self.transformer.encode(x).reshape(1,-1)
