@@ -16,9 +16,9 @@ def cal_similarity():
         request_data = request.get_json()
         # print(request_data)
         sim = Similarity()
-        sim_score = sim.calculate(request_data['student_answer'], request_data['answer'])
+        sim_score = sim.calculate(request_data['student_answer'], request_data['answer'])[0][0]
         # sim_score = 0
-        return jsonify(similarity=sim_score)
+        return jsonify(similarity=str(sim_score))
 
 if __name__ == '__main__':
   app.run()
